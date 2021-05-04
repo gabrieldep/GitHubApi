@@ -29,11 +29,11 @@ namespace GitHubApi.Controllers
                     .OrderBy(r => r.created_at)
                     .ToList()[index];
             }
-            catch(ArgumentOutOfRangeException ex)
+            catch (ArgumentOutOfRangeException)
             {
                 return null;
             }
-            catch (ArgumentNullException ex)
+            catch (ArgumentNullException)
             {
                 return null;
             }
