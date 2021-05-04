@@ -33,6 +33,10 @@ namespace GitHubApi.Controllers
             {
                 return null;
             }
+            catch (ArgumentNullException ex)
+            {
+                return null;
+            }
         }
     }
 }
