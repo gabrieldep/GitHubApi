@@ -11,7 +11,6 @@ namespace GitHubApi.Comunication
 {
     public class GitHub
     {
-
         /// <summary>
         /// Send a get requisition to GitHub API
         /// </summary>
