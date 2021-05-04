@@ -25,15 +25,9 @@ namespace GitHubApi.Comunication
             client.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "http://developer.github.com/v3/#user-agent-required");
 
             using HttpResponseMessage response = client.GetAsync($"orgs/{org}/repos").Result;
-            if (response.IsSuccessStatusCode)
-            {
-                IList<Repositorie> json = JsonConvert.DeserializeObject<IList<Repositorie>>(response.Content.ReadAsStringAsync().GetAwaiter().GetResult());
-                return json;
-            }
-            else
-            {
-                return null;
-            }
+            return response.IsSuccessStatusCode ? 
+                JsonConvert.DeserializeObject<IList<Repositorie>>(response.Content.ReadAsStringAsync().GetAwaiter().GetResult()) 
+                : null;
         }
     }
 }
