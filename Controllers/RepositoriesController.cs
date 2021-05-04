@@ -16,14 +16,23 @@ namespace GitHubApi.Controllers
         /// <summary>
         /// Send a requisition to GitHub API and filter the result
         /// </summary>
-        /// <returns>Returns the first five repositories from an organization with C# as principal language in order of creation.</returns>
+        /// <returns>Returns the repositorie from an organization with C# as principal language.</returns>
+        /// <param name="org">Name of organization on GitHub.</param>
+        /// <param name="index">Requested position.</param>
         [HttpGet]
-        public IEnumerable<Repositories> Get(string org)
+        public Repositorie Get(string org, int index)
         {
-            return GitHub.RecuperaRepositorios(org)
-                .Where(r => r.language == "C#")
-                .OrderBy(r => r.created_at)
-                .ToList().Take(5);
+            try
+            {
+                return GitHub.RecuperaRepositorios(org)
+                    .Where(r => r.language == "C#")
+                    .OrderBy(r => r.created_at)
+                    .ToList()[index];
+            }
+            catch(ArgumentOutOfRangeException ex)
+            {
+                return null;
+            }
         }
     }
 }

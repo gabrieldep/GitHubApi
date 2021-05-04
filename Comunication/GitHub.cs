@@ -16,7 +16,7 @@ namespace GitHubApi.Comunication
         /// Send a get requisition to GitHub API
         /// </summary>
         /// <returns>List with data from an org repositories</returns>
-        internal static IList<Repositories> RecuperaRepositorios(string org)
+        internal static IList<Repositorie> RecuperaRepositorios(string org)
         {
             HttpClient client = new HttpClient
             {
@@ -27,7 +27,7 @@ namespace GitHubApi.Comunication
             using HttpResponseMessage response = client.GetAsync($"orgs/{org}/repos").Result;
             if (response.IsSuccessStatusCode)
             {
-                IList<Repositories> json = JsonConvert.DeserializeObject<IList<Repositories>>(response.Content.ReadAsStringAsync().GetAwaiter().GetResult());
+                IList<Repositorie> json = JsonConvert.DeserializeObject<IList<Repositorie>>(response.Content.ReadAsStringAsync().GetAwaiter().GetResult());
                 return json;
             }
             else

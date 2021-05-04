@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace GitHubApi.Model
 {
-    public class Repositories
+    public class Repositorie
     {
         public long id { get; set; }
         public string name { get; set; }
