@@ -1,4 +1,4 @@
-﻿using ApiTakeBlip.Model;
+﻿using GitHubApi.Model;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApiTakeBlip.Comunication
+namespace GitHubApi.Comunication
 {
     public class GitHub
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ApiTakeBlip.Model
+namespace GitHubApi.Model
 {
     public class Organization
     {

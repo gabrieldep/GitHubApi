@@ -1,5 +1,5 @@
-﻿using ApiTakeBlip.Comunication;
-using ApiTakeBlip.Model;
+﻿using GitHubApi.Comunication;
+using GitHubApi.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ApiTakeBlip.Controllers
+namespace GitHubApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
