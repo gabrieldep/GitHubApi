@@ -2,10 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GitHubApi.Comunication
 {
@@ -24,8 +21,8 @@ namespace GitHubApi.Comunication
             client.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "http://developer.github.com/v3/#user-agent-required");
 
             using HttpResponseMessage response = client.GetAsync($"orgs/{org}/repos").Result;
-            return response.IsSuccessStatusCode ? 
-                JsonConvert.DeserializeObject<IList<Repositorie>>(response.Content.ReadAsStringAsync().GetAwaiter().GetResult()) 
+            return response.IsSuccessStatusCode ?
+                JsonConvert.DeserializeObject<IList<Repositorie>>(response.Content.ReadAsStringAsync().GetAwaiter().GetResult())
                 : null;
         }
     }
