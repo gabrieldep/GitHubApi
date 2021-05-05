@@ -11,7 +11,7 @@ namespace GitHubApi.Controllers
     public class RepositoriesController : ControllerBase
     {
         /// <summary>
-        /// Send a requisition to GitHub API and filter the result
+        /// Send a request to GitHub API and filter the result
         /// </summary>
         /// <returns>Returns the repositorie from an organization with C# as principal language.</returns>
         /// <param name="org">Name of organization on GitHub.</param>

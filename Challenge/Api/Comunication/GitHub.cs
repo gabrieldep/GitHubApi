@@ -9,7 +9,7 @@ namespace GitHubApi.Comunication
     public class GitHub
     {
         /// <summary>
-        /// Send a get requisition to GitHub API
+        /// Send a get request to GitHub API
         /// </summary>
         /// <returns>List with data from an org repositories</returns>
         internal static IList<Repositorie> RecuperaRepositorios(string org)
