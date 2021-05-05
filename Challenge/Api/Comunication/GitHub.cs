@@ -11,7 +11,7 @@ namespace GitHubApi.Comunication
         /// <summary>
         /// Send a get request to GitHub API
         /// </summary>
-        /// <returns>List with data from an org repositories</returns>
+        /// <returns>List with data from an organization's repositories</returns>
         internal static IList<Repositorie> RecuperaRepositorios(string org)
         {
             HttpClient client = new HttpClient
