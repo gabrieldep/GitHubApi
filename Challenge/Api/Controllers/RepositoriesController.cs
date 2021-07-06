@@ -24,7 +24,7 @@ namespace GitHubApi.Controllers
                 return GitHub.RecuperaRepositorios(org)
                     .Where(r => r.language == "C#")
                     .OrderBy(r => r.created_at)
-                    .ToList()[index];
+                    .ToList().GetRange(index, 1).First();
             }
             catch (ArgumentOutOfRangeException)
             {

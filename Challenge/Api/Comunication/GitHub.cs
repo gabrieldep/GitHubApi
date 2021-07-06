@@ -12,7 +12,7 @@ namespace GitHubApi.Comunication
         /// Send a get request to GitHub API
         /// </summary>
         /// <returns>List with data from an organization's repositories</returns>
-        internal static IList<Repositorie> RecuperaRepositorios(string org)
+        internal static IEnumerable<Repositorie> RecuperaRepositorios(string org)
         {
             HttpClient client = new HttpClient
             {
@@ -22,7 +22,7 @@ namespace GitHubApi.Comunication
 
             using HttpResponseMessage response = client.GetAsync($"orgs/{org}/repos").Result;
             return response.IsSuccessStatusCode ?
-                JsonConvert.DeserializeObject<IList<Repositorie>>(response.Content.ReadAsStringAsync().GetAwaiter().GetResult())
+                JsonConvert.DeserializeObject<IEnumerable<Repositorie>>(response.Content.ReadAsStringAsync().GetAwaiter().GetResult())
                 : null;
         }
     }
